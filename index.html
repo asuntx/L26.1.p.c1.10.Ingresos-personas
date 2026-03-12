@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresos del Personal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingresos del Personal</title>
 </head>
+
 <body>
-
-    <section id="body"> 
-        <div class="container mt-5">
-            <h2>Ingresos del Personal</h2>
-            <button type="button" class="btn-primary" id="body_btNuevoIngreso">
-                Nuevo Ingreso
-            </button>
-            <hr>
-            <div>
-                El promedio es de Bs. <span id="body_lblPromedio">0</span>
-            </div>
-            <div>
-                Menor ingreso: Bs. <span id="body_lblMenor">0</span>
-            </div>
-        </div>
+  <script type="module">
+    import cPersona from "./dist/controllers/Cl_cPersona.js";
+    new cPersona();
+  </script>
+  <div id="body">
+    <section id="ingreso" hidden>
+      <div>
+        <h5 id="ingreso_lblIngreso">Procesar Ingreso</h5>
+      </div>
+      <div>
+        <label>Nombre:
+          <input type="text" id="ingreso_inNombre" placeholder="Ej: Ana">
+        </label>
+      </div>
+      <div>
+        <label>Ingreso:
+          <input type="number" id="ingreso_inIngreso" placeholder="Ej: 100">
+        </label>
+      </div>
+      <div>
+        <button id="ingreso_btCancelar">Cancelar</button>
+        <button id="ingreso_btAceptar">Aceptar</button>
+      </div>
     </section>
-
-    <section id="articulo" hidden>
-        <div><h5 id="ingreso_lblingreso">Procesar Ingreso</h5></div>
-        <div>
-            <label> Nombre: <input type="text" id="inNombre" placeholder="ej: abcdef">
-            </label>
-             <label> Ingreso: <input type="number" id="inIngreso" placeholder="ej: 100">
-            </label>
-        </div>
-         <div>
-           <button id="articulo_btCancelar">Cancelar</button>
-           <button id="articulo_btAceptar">Aceptar</button>
-        </div>
-    </section>
-
-    <script type="module">
-        import cPersona from "./dist/controller/CL_cPersona.js";
-        new cPersona();
-    </script>
-
+    <hr>
+    <div style="margin-bottom: 20px;">
+      <button id="body_btNuevoIngreso">Nuevo Ingreso</button>
+    </div>
+    <div>
+      Ingreso promedio: <span id="body_lblPromedio">0</span>$
+    </div>
+    <div>
+      Monto del ingreso menor: <span id="body_lblMenor">0</span>$
+    </div>
+    <div>
+      Registros procesados: <span id="body_lblContPersonas">0</span>
+    </div>
+  </div>
 </body>
+
 </html>
