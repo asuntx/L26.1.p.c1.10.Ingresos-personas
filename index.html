@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresos del Personal</title>
+</head>
+<body>
+
+    <section id="body"> 
+        <div class="container mt-5">
+            <h2>Ingresos del Personal</h2>
+            <button type="button" class="btn-primary" id="body_btNuevoIngreso">
+                Nuevo Ingreso
+            </button>
+            <hr>
+            <div>
+                El promedio es de Bs. <span id="body_lblPromedio">0</span>
+            </div>
+            <div>
+                Menor ingreso: Bs. <span id="body_lblMenor">0</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="articulo" hidden>
+        <div><h5 id="ingreso_lblingreso">Procesar Ingreso</h5></div>
+        <div>
+            <label> Nombre: <input type="text" id="inNombre" placeholder="ej: abcdef">
+            </label>
+             <label> Ingreso: <input type="number" id="inIngreso" placeholder="ej: 100">
+            </label>
+        </div>
+         <div>
+           <button id="articulo_btCancelar">Cancelar</button>
+           <button id="articulo_btAceptar">Aceptar</button>
+        </div>
+    </section>
+
+    <script type="module">
+        import cPersona from "./dist/controller/CL_cPersona.js";
+        new cPersona();
+    </script>
+
+</body>
+</html>
